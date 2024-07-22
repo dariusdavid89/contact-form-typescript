@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="src/style.css" />
+
+		<title>Frontend Mentor | Contact form</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	</head>
+	<body>
+		<div class="content">
+			<div class="completed-message hidden">
+				<div class="icon-message">
+					<img
+						class="icon-success"
+						src="/src/assets/images/icon-success-check.svg"
+						alt="icon-success"
+						aria-hidden="true"
+					/>
+					<p class="message-p">Message Sent</p>
+				</div>
+				<p class="thanks-p">
+					Thanks for completing the form. We'll be in touch soon!
+				</p>
+			</div>
+
+			<form novalidate class="form">
+				<h1>Contact Us</h1>
+				<div class="form-name">
+					<div class="one-div">
+						<label for="first-name">First Name <span>*</span></label>
+						<input
+							aria-describedby="first-name-error"
+							name="first-name"
+							required
+							id="first-name"
+							class="first-name"
+							type="text"
+							minlength="2"
+							maxlength="32"
+						/>
+						<div
+							data-errorFor="first-name"
+							id="first-name-error"
+							class="error-message first-name-error"
+						></div>
+					</div>
+
+					<div class="two-div">
+						<label for="last-name">Last Name <span>*</span></label>
+						<input
+							aria-describedby="last-name-error"
+							name="last-name"
+							required
+							type="text"
+							id="last-name"
+							class="last-name"
+							minlength="2"
+							maxlength="32"
+						/>
+						<div
+							data-errorFor="last-name"
+							id="last-name-error"
+							class="error-message last-name-error"
+						></div>
+					</div>
+				</div>
+
+				<div class="form-email">
+					<label for="email-address">Email Address <span>*</span></label>
+					<input
+						aria-describedby="email-error"
+						name="email"
+						required
+						id="email-address"
+						class="email"
+						type="email"
+					/>
+					<div
+						data-errorFor="email"
+						id="email-error"
+						class="error-message email-error"
+					></div>
+				</div>
+
+				<fieldset>
+					<legend>Query Type <span>*</span></legend>
+					<div class="form-radio">
+						<div>
+							<input
+								aria-describedby=" query-error"
+								id="General-enquriy"
+								required
+								type="radio"
+								value="General Enquiry"
+								name="query-type"
+								class="query-type query"
+							/>
+							<label for="General-enquriy">
+								<div class="custom-radio"></div>
+								General Enquiry</label
+							>
+						</div>
+						<div>
+							<input
+								aria-describedby=" query-error"
+								id="support-request"
+								type="radio"
+								value="Support Request"
+								name="query-type"
+								class="query-type query"
+							/>
+							<label for="support-request">
+								<div class="custom-radio"></div>
+								Support Request</label
+							>
+						</div>
+					</div>
+					<div
+						data-errorFor="query-type"
+						id=" query-error"
+						class="error-message query-error"
+					></div>
+				</fieldset>
+
+				<div class="form-textarea">
+					<label for="message">Message <span>*</span></label>
+					<textarea
+						aria-describedby="textarea-error"
+						rows="5"
+						name="message"
+						class="message"
+						id="message"
+						required
+					></textarea>
+					<div
+						data-errorFor="message"
+						class="error-message textarea-error"
+						id="textarea-error"
+					></div>
+				</div>
+
+				<div class="check-div">
+					<input
+						aria-describedby="consent-error"
+						name="consent"
+						required
+						id="consent"
+						class="consent"
+						type="checkbox"
+					/>
+					<label for="consent"
+						>i consent to being contacted by the team <span>*</span></label
+					>
+				</div>
+
+				<div
+					data-errorFor="consent"
+					id="consent-error"
+					class="error-message consent-error"
+				></div>
+				<button class="submit" id="submit">Submit</button>
+			</form>
+		</div>
+
+		<script src="src/main.ts"></script>
+	</body>
+</html>
